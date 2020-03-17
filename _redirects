@@ -1,9 +1,0 @@
-# Redirect domain aliases to primary domain
-http://fysiodoktergent.be/* https://sergevandevoorde.be/:splat 301!
-http://fysiodokterdeinze.be/* https://sergevandevoorde.be/:splat 301!
-
-https://fysiodoktergent.be/* https://sergevandevoorde.be/:splat 301!
-https://fysiodokterdeinze.be/* https://sergevandevoorde.be/:splat 301!
-
-# Optional: Redirect default Netlify subdomain to primary domain
-https://sergevandevoorde.netlify.com/* https://sergevandevoorde.be/:splat 301!
