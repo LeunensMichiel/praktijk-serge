@@ -1,5 +1,4 @@
 import styled from "@emotion/styled"
-// import Fingerprint from "../../assets/fingerprint.png"
 
 export const FooterWrapper = styled.footer`
   display: grid;

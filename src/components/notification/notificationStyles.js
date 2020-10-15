@@ -2,7 +2,8 @@ import styled from "@emotion/styled"
 
 export const BannerWrapper = styled.aside`
   grid-column: 1 / span 14;
-  background: ${p => p.theme.colors.accent};
+  background: ${p => p.theme.colors.grayDark};
+  color: ${p => p.theme.colors.white};
   text-align: center;
   font-size: ${p => p.theme.fontSizes[1]};
   padding: ${p => p.theme.space[2]} 0;

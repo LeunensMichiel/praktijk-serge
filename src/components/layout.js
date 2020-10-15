@@ -6,6 +6,8 @@ import Navbar from "./navigation/navbar"
 import Footer from "./footer/footer"
 import Banner from "./notification/banner"
 
+import "@reach/dialog/styles.css"
+
 const mainCss = css`
   width: 100%;
   display: grid;
