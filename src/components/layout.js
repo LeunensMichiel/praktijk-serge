@@ -1,47 +1,48 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { css } from "@emotion/core"
 
-import Header from "./header"
-import "./layout.css"
+import Navbar from "./navigation/navbar"
+import Footer from "./footer/footer"
+import Banner from "./notification/banner"
 
+const mainCss = css`
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(16px, 1fr) repeat(12, minmax(24px, 95px)) minmax(
+      16px,
+      1fr
+    );
+  flex: 1 1 0;
+`
+
+const IsIE = () => {
+  if (typeof window !== `undefined`) {
+    return window.navigator.userAgent.match(/(MSIE|Trident)/)
+  }
+}
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
+  const [sideDrawerOpen, setSideDrawerOpen] = useState(false)
+  if (IsIE()) {
+    alert(
+      "Internet Explorer is oud en wordt niet meer ondersteund. Sergevandevoorde.be zal hier niet goed op draaien. Gelieve een moderne browser te downloaden zoals Google Chrome of Firefox"
+    )
+    window.open("https://www.google.com/intl/nl/chrome/")
+  }
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+      <Banner />
+      <Navbar
+        show={sideDrawerOpen}
+        hamburgerClickHandler={() => {
+          setSideDrawerOpen(!sideDrawerOpen)
+          document.getElementById("hamburger").classList.toggle("is-active")
         }}
-      >
-        <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
+      />
+      <main css={mainCss} aria-hidden={sideDrawerOpen}>
+        {children}
+      </main>
+      <Footer />
     </>
   )
 }

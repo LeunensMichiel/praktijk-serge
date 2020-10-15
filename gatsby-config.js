@@ -1,34 +1,88 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: "Serge Van de Voorde",
+    description: `Privéconsultatie fysische geneeskunde en revalidatie in Deinze`,
+    author: `@leunesmedia`,
+    siteUrl: `https://sergevandevoorde.be/`,
+    keywords: [
+      `Serge Van de Voorde`,
+      `Serge`,
+      `dokter`,
+      `specialisatie`,
+      `praktijk`,
+      `Privéconsultatie`,
+      `fysische geneeskunde`,
+      `AZ Sint-LUCAS GENT`,
+      `Arts`,
+      `Oost-vlaanderen`,
+      `revalidatie`,
+      `spieren`,
+      `sportletsels`,
+      `Deinze`,
+      `bewegingsstelsel`,
+      `manuele therapie`,
+      `steunzolen`,
+      `infiltraties`,
+      `emg`,
+      `eswt`,
+      `Rug`,
+      `Nek`,
+    ],
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `assets`,
+        path: `${__dirname}/src/assets/`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    `gatsby-plugin-emotion`,
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sharp",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Serge Van de Voorde`,
+        short_name: `Serge Van de Voorde`,
+        description: `Privéconsultatie fysische geneeskunde en revalidatie in Deinze`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        background_color: `#F0EFF2`,
+        theme_color: `#4C5866`,
+        display: `browser`,
+        icon: `src/assets/images/favicon.png`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /icons/,
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: "Montserrat",
+              variants: ["400", "700"],
+              fontDisplay: "swap",
+              strategy: "selfHosted",
+            },
+          ],
+        },
+        formats: ["woff2", "woff"],
+        useMinify: true,
+        usePreload: true,
+        usePreconnect: false,
+      },
+    },
+    `gatsby-plugin-netlify`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-netlify-cache`,
   ],
 }
