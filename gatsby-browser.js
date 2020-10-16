@@ -33,7 +33,7 @@ const GlobalStyles = css`
     flex-direction: column;
   }
   h1 {
-    font-size: ${sergeTheme.fontSizes[5]};
+    font-size: ${sergeTheme.fontSizes[4]};
   }
 
   p {

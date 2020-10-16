@@ -34,6 +34,7 @@ export const LogoWrapper = styled.div`
   h2 {
     text-transform: uppercase;
     font-size: ${p => p.theme.fontSizes[4]};
+    color: ${p => p.theme.colors.accentLighter};
   }
   @media ${p => p.theme.mq.tablet} {
     margin-top: ${p => p.theme.space[0]};
@@ -61,6 +62,8 @@ export const LinkWrapper = styled.nav`
     font-size: ${p => p.theme.fontSizes[3]};
     font-weight: 700;
     text-transform: uppercase;
+    color: ${p => p.theme.colors.accentLighter};
+
     &.link-cta {
       background-color: ${p => p.theme.colors.grayDark};
       color: ${p => p.theme.colors.white};
@@ -91,6 +94,7 @@ export const LinkWrapper = styled.nav`
       padding: 0;
       font-size: ${p => p.theme.fontSizes[3]};
       background-color: ${p => p.theme.colors.accentLight};
+
       &:nth-of-type(2n) {
         background-color: ${p => p.theme.colors.accent};
       }

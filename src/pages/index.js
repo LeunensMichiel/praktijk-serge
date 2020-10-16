@@ -1,19 +1,16 @@
 import React from "react"
-import { Link } from "gatsby"
-import SEO from "../components/seo/seo"
 
+import SEO from "../components/seo/seo"
 import Layout from "../components/layout"
+import Landing from "../components/landing/landing"
 
 const IndexPage = () => (
   <Layout>
     <SEO
       title="Privéconsultatie fysische geneeskunde en revalidatie"
-      description="Dr Serge Van de Voorde studeerde geneeskunde aan de KU Leuven en behaalde zijn diploma
-      in 1994. Nadien specialiseerde hij zich in de fysische geneeskunde en revalidatie met
-      opleidingen in AZ Sint Lucas Brugge, SZ Roeselare en UZ Leuven. Daarnaast behaalde hij een
-      licentie in de sportgeneeskunde en een certificaat in de manuele geneeskunde.
-      "
+      description="Dr. Serge Van de Voorde specialiseert zich in de fysische geneeskunde en revalidatie. Bij hem kan u terecht voor alles rond sportletsels, rug- en nek, infiltraties en meer."
     />
+    <Landing />
   </Layout>
 )
 

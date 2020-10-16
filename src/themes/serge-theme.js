@@ -27,7 +27,17 @@ const sergeTheme = {
     body: 1.5625,
     heading: 1,
   },
-  space: ["6px", "8px", "14px", "20px", "32px", "36px", "64px", "96px"],
+  space: [
+    "6px",
+    "8px",
+    "14px",
+    "20px",
+    "32px",
+    "36px",
+    "64px",
+    "96px",
+    "164px",
+  ],
   mq: {
     mobileS: `(max-width: 374px)`,
     mobileSLandscape: `(max-width: 750px) and (max-height: 500px) and (orientation: landscape)`,

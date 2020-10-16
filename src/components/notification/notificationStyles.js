@@ -7,7 +7,6 @@ export const BannerWrapper = styled.aside`
   text-align: center;
   font-size: ${p => p.theme.fontSizes[1]};
   padding: ${p => p.theme.space[2]} 0;
-  margin-bottom: ${p => p.theme.space[1]};
 
   button {
     text-decoration: underline;
