@@ -22,7 +22,7 @@ const GlobalStyles = css`
   body {
     font-family: ${sergeTheme.fonts.body};
     line-height: ${sergeTheme.lineHeights.heading};
-    background: ${sergeTheme.colors.white};
+    background: ${sergeTheme.colors.whiteNeutral};
     color: ${sergeTheme.colors.black};
   }
 

@@ -1,7 +1,7 @@
 const sergeTheme = {
   colors: {
     white: "#FBF9FE",
-    neutralWhite: "#F0EFF2",
+    whiteNeutral: "#F0EFF2",
     accent: "#A1A9B2",
     accentDark: "#4C5866",
     accentLight: "#DCE0E5",

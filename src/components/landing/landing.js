@@ -15,7 +15,15 @@ const Landing = () => {
           <a>Maak een afspraak</a>
         </InnerLanding>
       </LandingWrapper>
-      <LandingImage />
+      <LandingImage>
+        <blockquote>
+          <p>
+            Life is like riding a bicycle. To keep your balance, you must keep
+            on moving.
+          </p>
+          <footer>— Albert Einstein</footer>
+        </blockquote>
+      </LandingImage>
     </>
   )
 }

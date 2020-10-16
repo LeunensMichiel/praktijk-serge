@@ -69,7 +69,7 @@ module.exports = {
           google: [
             {
               family: "Montserrat",
-              variants: ["400", "700"],
+              variants: ["300i", "400", "700"],
               fontDisplay: "swap",
               strategy: "selfHosted",
             },

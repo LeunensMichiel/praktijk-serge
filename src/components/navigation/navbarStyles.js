@@ -10,7 +10,7 @@ export const NavWrapper = styled.header`
     );
   align-content: center;
   position: fixed;
-  top: 72px;
+  top: 100px;
   left: 0;
   right: 0;
   z-index: 100;
