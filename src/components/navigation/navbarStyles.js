@@ -1,10 +1,7 @@
 import styled from "@emotion/styled"
 
-// import Fingerprint from "../../assets/fingerprint.png"
-
 export const NavWrapper = styled.header`
   width: 100%;
-  height: 120px;
   display: grid;
   flex-shrink: 0;
   grid-template-columns: minmax(16px, 1fr) repeat(12, minmax(24px, 95px)) minmax(
@@ -12,39 +9,21 @@ export const NavWrapper = styled.header`
       1fr
     );
   align-content: center;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
   z-index: 100;
-
-  hr {
-    grid-column: 2 / span 12;
-    padding-top: 8px;
-    border-bottom: 1px solid ${p => p.theme.colors.accentRich};
-  }
-  @media ${p => p.theme.mq.tablet} {
-    height: auto;
-    hr {
-      padding: 0;
-      margin-top: 16px;
-    }
-  }
 
   @media ${p => p.theme.mq.mobileM} {
     background-color: ${p => p.theme.colors.white};
     display: flex;
     flex-direction: column;
-    position: fixed;
-    top: 72px;
     bottom: 0;
-    left: 0;
-    right: 0;
     width: 100%;
-    height: auto;
     overflow-y: auto;
     transform: ${props => (props.show ? "translateX(0)" : "translateX(-100%)")};
     transition: transform 0.4s cubic-bezier(0.87, 0, 0.13, 1);
-
-    hr {
-      display: none;
-    }
   }
 `
 
@@ -52,21 +31,16 @@ export const LogoWrapper = styled.div`
   grid-column: 2 / span 4;
   display: flex;
   align-items: center;
-  background-repeat: no-repeat;
-  background-size: contain;
   h2 {
-    font-size: ${p => p.theme.fontSizes[3]};
-    font-family: ${p => p.theme.fonts.heading};
-    padding: ${p => p.theme.space[4]} 0;
+    text-transform: uppercase;
+    font-size: ${p => p.theme.fontSizes[4]};
   }
   @media ${p => p.theme.mq.tablet} {
     margin-top: ${p => p.theme.space[0]};
     grid-column: 2 / span 12;
     justify-content: center;
-    background-position: center;
     h2 {
       font-size: ${p => p.theme.fontSizes[2]};
-      padding: ${p => p.theme.space[3]} 0;
     }
   }
   @media ${p => p.theme.mq.mobileM} {
@@ -82,9 +56,19 @@ export const LinkWrapper = styled.nav`
   display: flex;
   align-items: center;
   a {
-    padding: ${p => p.theme.space[0]};
-    margin: 0 ${p => p.theme.space[2]};
+    padding: ${p => p.theme.space[1]} ${p => p.theme.space[2]};
+    margin: 0 ${p => p.theme.space[0]};
     font-size: ${p => p.theme.fontSizes[3]};
+    font-weight: 700;
+    text-transform: uppercase;
+    &.link-cta {
+      background-color: ${p => p.theme.colors.grayDark};
+      color: ${p => p.theme.colors.white};
+      transition: background-color 0.3s ease-out;
+      &:hover {
+        background-color: ${p => p.theme.colors.grayDarker};
+      }
+    }
   }
   @media ${p => p.theme.mq.tablet} {
     grid-column: 2 / span 12;

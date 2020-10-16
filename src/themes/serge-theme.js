@@ -22,7 +22,7 @@ const sergeTheme = {
     body:
       'Montserrat, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
   },
-  fontSizes: ["12px", "14px", "18px", "24px", "36px"],
+  fontSizes: ["12px", "14px", "18px", "20px", "24px", "36px"],
   lineHeights: {
     body: 1.5625,
     heading: 1,

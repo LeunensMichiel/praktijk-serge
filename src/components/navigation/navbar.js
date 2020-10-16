@@ -14,7 +14,7 @@ const Navbar = ({ show = false, hamburgerClickHandler }) => {
       <NavbarWrapper>
         <LogoWrapper mobile>
           <Link to="/">
-            <h2>Huidziekten Deinze</h2>
+            <h2>Dr. Serge Van de Voorde</h2>
           </Link>
         </LogoWrapper>
         <button
@@ -35,32 +35,20 @@ const Navbar = ({ show = false, hamburgerClickHandler }) => {
       <NavWrapper show={show}>
         <LogoWrapper>
           <Link to="/">
-            <h2>Huidziekten Deinze</h2>
+            <h2>Dr. Serge Van de Voorde</h2>
           </Link>
         </LogoWrapper>
         <LinkWrapper>
-          <Link to="/" activeClassName="active">
-            Welkom
+          <Link to="/#arts" activeClassName="active">
+            Arts
           </Link>
-          <Link to="/team/" partiallyActive={true} activeClassName="active">
-            Team
+          <Link to="/#aanbod" activeClassName="active">
+            Aanbod
           </Link>
-          <Link
-            to="/behandelingen/"
-            partiallyActive={true}
-            activeClassName="active"
-          >
-            Behandelingen
-          </Link>
-          <Link
-            to="/praktisch/"
-            partiallyActive={true}
-            activeClassName="active"
-          >
+          <Link to="/#praktisch" className="link-cta" activeClassName="active">
             Praktisch
           </Link>
         </LinkWrapper>
-        <hr />
       </NavWrapper>
     </>
   )

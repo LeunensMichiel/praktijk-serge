@@ -18,7 +18,7 @@ const Modal = ({ children, modalIsOpen, close }) => {
   return (
     <Transition
       mountOnEnter
-      unmountOnExit={true}
+      unmountOnExit
       in={modalIsOpen}
       addEndListener={(node, done) => {
         timeline.fromTo(
