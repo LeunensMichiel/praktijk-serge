@@ -12,7 +12,7 @@ const sergeTheme = {
     black: "#191919",
   },
   shadows: {
-    button: "-12px 12px 0px #EBEDF0;",
+    button: "-12px 12px 0px #DCE0E6",
     container:
       "0px 4px 10px rgba(0, 0, 0, 0.1), 0px 2px 25px rgba(0, 0, 0, 0.1)",
   },
