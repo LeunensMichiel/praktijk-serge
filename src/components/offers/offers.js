@@ -1,45 +1,63 @@
-import React from "react"
+import React, { useState } from "react"
+import { useStaticQuery, graphql } from "gatsby"
+
+import Modal from "../modal/modal"
 import { OfferWrapper } from "./offersStyles"
 import Info from "../../assets/icons/info.svg"
 
 const Offers = () => {
+  const [modalIsOpen, setIsOpen] = useState(false)
+  const [currentItem, setCurrentItem] = useState(0)
+
+  function openModal() {
+    setIsOpen(true)
+  }
+
+  function closeModal() {
+    setIsOpen(false)
+  }
+
+  const data = useStaticQuery(graphql`
+    query {
+      offers: allMarkdownRemark(sort: { fields: frontmatter___rang }) {
+        edges {
+          node {
+            frontmatter {
+              name
+            }
+            html
+          }
+        }
+      }
+    }
+  `)
+
   return (
-    <OfferWrapper>
-      <div className="offer-item">
-        <h4>Beweginsstelsel</h4>
-        <button>
-          <Info />
-        </button>
-      </div>
-      <div className="offer-item">
-        <h4>Sportletsels</h4>
-        <Info />
-      </div>
-      <div className="offer-item">
-        <h4>Manuele Therapie</h4>
-        <Info />
-      </div>
-      <div className="offer-item">
-        <h4>Rug- en nekrevalidatie</h4>
-        <Info />
-      </div>
-      <div className="offer-item">
-        <h4>Steunzolen</h4>
-        <Info />
-      </div>
-      <div className="offer-item">
-        <h4>EMG</h4>
-        <Info />
-      </div>
-      <div className="offer-item">
-        <h4>ESWT</h4>
-        <Info />
-      </div>
-      <div className="offer-item">
-        <h4>Infiltraties</h4>
-        <Info />
-      </div>
-    </OfferWrapper>
+    <>
+      <OfferWrapper>
+        {data.offers.edges.map((edge, index) => (
+          <div className="offer-item" key={edge.node.frontmatter.name}>
+            <h4>{edge.node.frontmatter.name}</h4>
+            <button
+              onClick={() => {
+                setCurrentItem(index)
+                openModal()
+              }}
+            >
+              <Info />
+            </button>
+          </div>
+        ))}
+      </OfferWrapper>
+      <Modal modalIsOpen={modalIsOpen} close={closeModal}>
+        <h3>{data.offers.edges[currentItem].node.frontmatter.name}</h3>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: data.offers.edges[currentItem].node.html,
+          }}
+        ></div>
+      </Modal>
+    </>
   )
 }
 

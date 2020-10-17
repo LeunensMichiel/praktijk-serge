@@ -37,8 +37,16 @@ module.exports = {
         path: `${__dirname}/src/assets/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown`,
+        path: `${__dirname}/src/markdown/`,
+      },
+    },
     `gatsby-plugin-emotion`,
     "gatsby-transformer-sharp",
+    `gatsby-transformer-remark`,
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sharp",
     {

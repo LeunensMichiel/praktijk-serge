@@ -35,5 +35,16 @@ export const OfferWrapper = styled.section`
       font-size: ${p => p.theme.fontSizes[4]};
       line-height: 100%;
     }
+
+    svg {
+      path {
+        transition: fill 0.3s ease-out;
+      }
+      &:hover {
+        path {
+          fill: ${p => p.theme.colors.accentDark};
+        }
+      }
+    }
   }
 `

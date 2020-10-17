@@ -40,6 +40,7 @@ const GlobalStyles = css`
     font-size: ${sergeTheme.fontSizes[2]};
     font-family: ${sergeTheme.fonts.body};
     line-height: ${sergeTheme.lineHeights.body};
+    color: ${sergeTheme.colors.black};
   }
 
   a {
@@ -66,7 +67,7 @@ const GlobalStyles = css`
     background: transparent;
     color: inherit;
     font: inherit;
-    line-height: normal;
+    line-height: 0;
     cursor: pointer;
     -webkit-font-smoothing: inherit;
     -moz-osx-font-smoothing: inherit;
@@ -92,6 +93,10 @@ const GlobalStyles = css`
       font-family: ${sergeTheme.fonts.heading};
       font-size: ${sergeTheme.fontSizes[3]};
       margin-bottom: ${sergeTheme.space[4]};
+      color: ${sergeTheme.colors.accentDark};
+    }
+    b {
+      color: ${sergeTheme.colors.accentDark};
     }
     ul {
       padding-left: ${sergeTheme.space[4]};

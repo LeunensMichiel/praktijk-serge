@@ -22,7 +22,7 @@ const GlobalStyles = css`
   body {
     font-family: ${sergeTheme.fonts.body};
     line-height: ${sergeTheme.lineHeights.heading};
-    background: ${sergeTheme.colors.white};
+    background: ${sergeTheme.colors.whiteNeutral};
     color: ${sergeTheme.colors.black};
   }
 
@@ -33,7 +33,7 @@ const GlobalStyles = css`
     flex-direction: column;
   }
   h1 {
-    font-size: ${sergeTheme.fontSizes[5]};
+    font-size: ${sergeTheme.fontSizes[4]};
   }
 
   p {
@@ -66,7 +66,7 @@ const GlobalStyles = css`
     background: transparent;
     color: inherit;
     font: inherit;
-    line-height: normal;
+    line-height: 0;
     cursor: pointer;
     -webkit-font-smoothing: inherit;
     -moz-osx-font-smoothing: inherit;
@@ -92,6 +92,10 @@ const GlobalStyles = css`
       font-family: ${sergeTheme.fonts.heading};
       font-size: ${sergeTheme.fontSizes[3]};
       margin-bottom: ${sergeTheme.space[4]};
+      color: ${sergeTheme.colors.accentDark};
+    }
+    b {
+      color: ${sergeTheme.colors.accentDark};
     }
     ul {
       padding-left: ${sergeTheme.space[4]};
