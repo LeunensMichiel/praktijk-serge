@@ -12,7 +12,7 @@ const Landing = () => {
             <br />U kan er informatie vinden over wie ik ben en wat ik doe, waar
             en wanneer ik raadplegingen doe en hoe u een afspraak kan maken.
           </p>
-          <a>Maak een afspraak</a>
+          <a href="#praktisch">Maak een afspraak</a>
         </InnerLanding>
       </LandingWrapper>
       <LandingImage>

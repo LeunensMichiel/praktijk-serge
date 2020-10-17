@@ -16,6 +16,7 @@ export const OfferWrapper = styled.section`
   grid-auto-rows: auto;
   grid-gap: 48px 24px;
   padding: ${p => p.theme.space[7]} 0;
+  position: relative;
 
   .offer-item {
     grid-column: 2;
@@ -46,5 +47,16 @@ export const OfferWrapper = styled.section`
         }
       }
     }
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 48px;
+    background: ${p => p.theme.colors.whiteNeutral};
   }
 `
