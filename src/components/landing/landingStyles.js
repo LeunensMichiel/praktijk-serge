@@ -11,6 +11,10 @@ export const LandingWrapper = styled.section`
       16px,
       1fr
     );
+  @media ${p => p.theme.mq.mobileM} {
+    height: auto;
+    padding-top: ${p => p.theme.space[5]};
+  }
 `
 
 export const InnerLanding = styled.div`
@@ -31,7 +35,10 @@ export const InnerLanding = styled.div`
   p {
     color: ${p => p.theme.colors.accentLighter};
     max-width: 650px;
-    margin-bottom: ${p => p.theme.space[4]};
+    margin-bottom: ${p => p.theme.space[2]};
+    &:not(:first-of-type) {
+      margin-bottom: ${p => p.theme.space[4]};
+    }
   }
   a {
     display: flex;
@@ -49,6 +56,21 @@ export const InnerLanding = styled.div`
       padding: ${p => p.theme.space[3]} ${p => p.theme.space[4]};
       background-color: ${p => p.theme.colors.accentLight};
       transition: background-color 0.3s ease-out, padding 0.1s 0.3s ease-out;
+    }
+  }
+  @media ${p => p.theme.mq.mobileM} {
+    grid-column: 2 / span 12;
+    height: auto;
+    justify-content: stretch;
+    margin-bottom: ${p => p.theme.space[0]};
+    h1 {
+      font-size: ${p => p.theme.fontSizes[2]};
+    }
+    p {
+      font-size: ${p => p.theme.fontSizes[1]};
+    }
+    a {
+      font-size: ${p => p.theme.fontSizes[1]};
     }
   }
 `
@@ -101,6 +123,7 @@ export const LandingImage = styled.figure`
       font-style: italic;
       font-size: ${p => p.theme.fontSizes[1]};
       margin-bottom: ${p => p.theme.space[2]};
+      line-height: 140%;
       &:before {
         content: open-quote;
         font-size: ${p => p.theme.fontSizes[4]};
@@ -114,6 +137,20 @@ export const LandingImage = styled.figure`
       font-weight: bold;
       font-size: ${p => p.theme.fontSizes[1]};
       color: ${p => p.theme.colors.white};
+    }
+  }
+
+  @media ${p => p.theme.mq.mobileM} {
+    height: 220px;
+    blockquote {
+      margin-left: 0;
+      p {
+        font-size: ${p => p.theme.fontSizes[0]};
+      }
+    }
+    &:after {
+      width: 24px;
+      height: 24px;
     }
   }
 `

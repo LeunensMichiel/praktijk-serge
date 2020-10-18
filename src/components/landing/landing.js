@@ -9,8 +9,10 @@ const Landing = () => {
           <p>
             Met deze site wil ik u op de hoogte brengen van de werking van mijn
             praktijk.
-            <br />U kan er informatie vinden over wie ik ben en wat ik doe, waar
-            en wanneer ik raadplegingen doe en hoe u een afspraak kan maken.
+          </p>
+          <p>
+            U kan er informatie vinden over wie ik ben en wat ik doe, waar en
+            wanneer ik raadplegingen doe en hoe u een afspraak kan maken.
           </p>
           <a href="#praktisch">Maak een afspraak</a>
         </InnerLanding>

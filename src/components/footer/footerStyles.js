@@ -13,4 +13,9 @@ export const FooterWrapper = styled.footer`
   b {
     color: ${p => p.theme.colors.accentDark};
   }
+
+  @media ${p => p.theme.mq.mobileM} {
+    font-size: ${p => p.theme.fontSizes[1]};
+    text-align: center;
+  }
 `

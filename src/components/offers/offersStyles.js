@@ -12,7 +12,10 @@ export const OfferWrapper = styled.section`
   background-size: cover;
   background-position: center;
   display: grid;
-  grid-template-columns: minmax(16px, 1fr) 1fr 1fr minmax(16px, 1fr);
+  grid-template-columns: minmax(16px, 1fr) repeat(2, minmax(24px, 190px)) minmax(
+      16px,
+      1fr
+    );
   grid-auto-rows: auto;
   grid-gap: 48px 24px;
   padding: ${p => p.theme.space[7]} 0;
@@ -59,5 +62,20 @@ export const OfferWrapper = styled.section`
     width: 48px;
     height: 48px;
     background: ${p => p.theme.colors.whiteNeutral};
+  }
+
+  @media ${p => p.theme.mq.mobileM} {
+    grid-gap: 48px 0;
+    .offer-item {
+      grid-column: 2 / span 2;
+      width: 100%;
+      &:nth-of-type(even) {
+        grid-column: 2 / span 2;
+      }
+
+      h4 {
+        font-size: ${p => p.theme.fontSizes[2]};
+      }
+    }
   }
 `

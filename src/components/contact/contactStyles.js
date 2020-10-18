@@ -48,6 +48,9 @@ export const InfoWrapper = styled.section`
     .gatsby-image-wrapper {
       width: 100%;
       height: 100%;
+      top: 0;
+      left: 0;
+      position: absolute !important;
     }
 
     p {
@@ -60,6 +63,28 @@ export const InfoWrapper = styled.section`
       font-size: 10px;
       color: ${p => p.theme.colors.accent};
       background-color: ${p => p.theme.colors.accentLight};
+    }
+  }
+
+  @media ${p => p.theme.mq.mobileM} {
+    grid-column: 2 / span 12;
+    flex-direction: column;
+    padding: ${p => p.theme.space[5]} 0;
+    .contact__info {
+      padding: ${p => p.theme.space[3]};
+    }
+    p {
+      font-size: ${p => p.theme.fontSizes[1]};
+    }
+    .contact__aside {
+      height: 0;
+      overflow: hidden;
+      padding-bottom: 100%;
+      position: relative;
+      flex-shrink: 0;
+      p {
+        padding: ${p => p.theme.space[2]};
+      }
     }
   }
 `
@@ -94,5 +119,9 @@ export const MapWrapper = styled.section`
       background-color: ${p => p.theme.colors.accentDark};
       border-radius: 100%;
     }
+  }
+
+  @media ${p => p.theme.mq.mobileM} {
+    grid-column: 2 / span 12;
   }
 `

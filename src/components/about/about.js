@@ -16,7 +16,7 @@ const About = () => {
     }
   `)
   return (
-    <AboutWrapper>
+    <AboutWrapper id="arts">
       <div className="img-wrapper">
         <Img
           alt="Foto van Dokter Serge Van de Voorde"

@@ -19,11 +19,11 @@ export const NavWrapper = styled.header`
     background-color: ${p => p.theme.colors.white};
     display: flex;
     flex-direction: column;
-    bottom: 0;
+    top: 72px;
     width: 100%;
-    overflow-y: auto;
-    transform: ${props => (props.show ? "translateX(0)" : "translateX(-100%)")};
-    transition: transform 0.4s cubic-bezier(0.87, 0, 0.13, 1);
+    min-height: 200px;
+    transform: ${props => (props.show ? "translateY(0)" : "translateY(-100%)")};
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 `
 
@@ -82,26 +82,29 @@ export const LinkWrapper = styled.nav`
   }
   @media ${p => p.theme.mq.mobileM} {
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: stretch;
     flex: auto;
     a {
       display: flex;
       align-items: center;
       justify-content: center;
-      flex: 1;
       margin: 0;
-      padding: 0;
+      padding: 32px 0;
       font-size: ${p => p.theme.fontSizes[3]};
-      background-color: ${p => p.theme.colors.accentLight};
-
+      background-color: ${p => p.theme.colors.grayDark};
       &:nth-of-type(2n) {
-        background-color: ${p => p.theme.colors.accent};
+        background-color: ${p => p.theme.colors.grayDarker};
       }
       &:hover,
       &:focus {
-        color: ${p => p.theme.colors.accentRich};
-        transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        background-color: ${p => p.theme.colors.accentDark};
+      }
+      &.link-cta {
+        &:hover,
+        &:focus {
+          background-color: ${p => p.theme.colors.accentDark};
+        }
       }
     }
   }
@@ -116,7 +119,7 @@ export const NavbarWrapper = styled.nav`
   justify-content: space-between;
   position: fixed;
   z-index: 10000;
-  background: ${p => p.theme.colors.white};
+  background: ${p => p.theme.colors.grayDarker};
   box-shadow: ${p => p.theme.shadows.container};
   .hamburger {
     padding: 16px;
@@ -137,7 +140,7 @@ export const NavbarWrapper = styled.nav`
       .hamburger-inner,
       .hamburger-inner::before,
       .hamburger-inner::after {
-        background-color: ${p => p.theme.colors.black};
+        background-color: ${p => p.theme.colors.white};
       }
     }
   }
@@ -158,7 +161,7 @@ export const NavbarWrapper = styled.nav`
     &::after {
       width: 40px;
       height: 4px;
-      background-color: ${p => p.theme.colors.black};
+      background-color: ${p => p.theme.colors.white};
       border-radius: 2px;
       position: absolute;
       transition-property: transform;

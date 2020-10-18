@@ -73,4 +73,28 @@ export const AboutWrapper = styled.section`
       }
     }
   }
+
+  @media ${p => p.theme.mq.mobileM} {
+    flex-wrap: wrap;
+    padding: ${p => p.theme.space[5]} 0;
+    .img-wrapper {
+      width: 100%;
+      padding-bottom: 100%;
+      margin-right: 0;
+      margin-bottom: ${p => p.theme.space[5]};
+    }
+    .flex {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+    p {
+      line-height: 160%;
+      &:last-of-type {
+        margin-bottom: ${p => p.theme.space[5]};
+      }
+    }
+    .about__card {
+      margin-bottom: ${p => p.theme.space[5]};
+    }
+  }
 `

@@ -15,7 +15,7 @@ export const BannerWrapper = styled.aside`
   @media ${p => p.theme.mq.mobileM} {
     margin-top: 72px;
     margin-bottom: 0;
-    font-size: ${p => p.theme.fontSizes[0]};
+    font-size: 10px;
     padding: ${p => p.theme.space[2]} 16px;
   }
 `
