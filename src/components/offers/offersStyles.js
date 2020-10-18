@@ -41,7 +41,8 @@ export const OfferWrapper = styled.section`
       path {
         transition: fill 0.3s ease-out;
       }
-      &:hover {
+      &:hover,
+      &:focus {
         path {
           fill: ${p => p.theme.colors.accentDark};
         }

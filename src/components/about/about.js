@@ -19,7 +19,7 @@ const About = () => {
     <AboutWrapper>
       <div className="img-wrapper">
         <Img
-          alt="praktijkafbeelding"
+          alt="Foto van Dokter Serge Van de Voorde"
           fluid={data.serge.childImageSharp.fluid}
         />
       </div>

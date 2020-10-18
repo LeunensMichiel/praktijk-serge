@@ -5,6 +5,8 @@ import Layout from "../components/layout"
 import Landing from "../components/landing/landing"
 import About from "../components/about/about"
 import Offers from "../components/offers/offers"
+import Map from "../components/contact/map"
+import Practical from "../components/contact/practical"
 
 const IndexPage = () => (
   <Layout>
@@ -15,6 +17,8 @@ const IndexPage = () => (
     <Landing />
     <About />
     <Offers />
+    <Practical />
+    <Map />
   </Layout>
 )
 
