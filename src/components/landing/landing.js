@@ -1,4 +1,6 @@
 import React from "react"
+import { Link } from "react-scroll"
+
 import { InnerLanding, LandingImage, LandingWrapper } from "./landingStyles"
 const Landing = () => {
   return (
@@ -14,7 +16,15 @@ const Landing = () => {
             U kan er informatie vinden over wie ik ben en wat ik doe, waar en
             wanneer ik raadplegingen doe en hoe u een afspraak kan maken.
           </p>
-          <a href="#praktisch">Maak een afspraak</a>
+          <Link
+            to="praktisch"
+            className="link-cta"
+            spy={true}
+            hashSpy={true}
+            smooth="easeInOutQuint"
+          >
+            Praktisch
+          </Link>
         </InnerLanding>
       </LandingWrapper>
       <LandingImage>
