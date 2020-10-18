@@ -35,6 +35,12 @@ export const LogoWrapper = styled.div`
     text-transform: uppercase;
     font-size: ${p => p.theme.fontSizes[4]};
     color: ${p => p.theme.colors.accentLighter};
+    cursor: pointer;
+    transition: color 0.3s ease-out;
+    &:hover {
+      color: ${p => p.theme.colors.accent};
+      transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
   }
   @media ${p => p.theme.mq.tablet} {
     margin-top: ${p => p.theme.space[0]};
@@ -62,15 +68,15 @@ export const LinkWrapper = styled.nav`
     font-size: ${p => p.theme.fontSizes[3]};
     font-weight: 700;
     text-transform: uppercase;
-    color: ${p => p.theme.colors.accentLighter};
-
-    &.link-cta {
-      background-color: ${p => p.theme.colors.grayDark};
-      color: ${p => p.theme.colors.white};
-      transition: background-color 0.3s ease-out;
-      &:hover {
-        background-color: ${p => p.theme.colors.grayDarker};
-      }
+    color: ${p => p.theme.colors.white};
+    transition: color 0.3s ease-out, background-color 0.3s ease-out;
+    cursor: pointer;
+    &:hover {
+      color: ${p => p.theme.colors.accent};
+      transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    &.active {
+      background-color: ${p => p.theme.colors.grayDarker};
     }
   }
   @media ${p => p.theme.mq.tablet} {

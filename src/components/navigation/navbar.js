@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link } from "react-scroll"
 
 import {
   NavWrapper,
@@ -13,7 +13,12 @@ const Navbar = ({ show = false, hamburgerClickHandler }) => {
     <>
       <NavbarWrapper>
         <LogoWrapper mobile>
-          <Link to="/">
+          <Link
+            to="home"
+            activeClass="active"
+            spy={true}
+            smooth="easeInOutQuint"
+          >
             <h2>Dr. Serge Van de Voorde</h2>
           </Link>
         </LogoWrapper>
@@ -34,18 +39,42 @@ const Navbar = ({ show = false, hamburgerClickHandler }) => {
       </NavbarWrapper>
       <NavWrapper show={show}>
         <LogoWrapper>
-          <Link to="/">
+          <Link
+            to="home"
+            activeClass="active"
+            spy={true}
+            smooth="easeInOutQuint"
+          >
             <h2>Dr. Serge Van de Voorde</h2>
           </Link>
         </LogoWrapper>
         <LinkWrapper>
-          <Link to="/#arts" activeClassName="active">
+          <Link
+            to="arts"
+            activeClass="active"
+            spy={true}
+            hashSpy={true}
+            smooth="easeInOutQuint"
+          >
             Arts
           </Link>
-          <Link to="/#aanbod" activeClassName="active">
+          <Link
+            to="aanbod"
+            hashSpy={true}
+            activeClass="active"
+            spy={true}
+            smooth="easeInOutQuint"
+          >
             Aanbod
           </Link>
-          <Link to="/#praktisch" className="link-cta" activeClassName="active">
+          <Link
+            to="praktisch"
+            className="link-cta"
+            activeClass="active"
+            spy={true}
+            hashSpy={true}
+            smooth="easeInOutQuint"
+          >
             Praktisch
           </Link>
         </LinkWrapper>

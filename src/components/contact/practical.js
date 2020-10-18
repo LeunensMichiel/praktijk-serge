@@ -17,7 +17,7 @@ const Practical = () => {
     }
   `)
   return (
-    <InfoWrapper>
+    <InfoWrapper id="praktisch">
       <div className="contact__info">
         <div className="contact__info--section">
           <h5>Privépraktijk</h5>

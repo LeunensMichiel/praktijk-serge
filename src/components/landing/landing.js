@@ -3,7 +3,7 @@ import { InnerLanding, LandingImage, LandingWrapper } from "./landingStyles"
 const Landing = () => {
   return (
     <>
-      <LandingWrapper>
+      <LandingWrapper id="home">
         <InnerLanding>
           <h1>Privéconsultatie fysische geneeskunde en revalidatie</h1>
           <p>

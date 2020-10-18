@@ -47,14 +47,10 @@ const GlobalStyles = css`
     color: ${sergeTheme.colors.black};
     transition: color 0.4s ease;
     text-decoration: none;
-    &.active {
-      color: ${sergeTheme.colors.accentRich};
-      font-weight: 700;
-    }
     &:hover,
     &:focus {
       color: ${sergeTheme.colors.accent};
-      transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     }
   }
 

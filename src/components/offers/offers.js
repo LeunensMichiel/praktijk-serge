@@ -34,7 +34,7 @@ const Offers = () => {
 
   return (
     <>
-      <OfferWrapper>
+      <OfferWrapper id="aanbod">
         {data.offers.edges.map((edge, index) => (
           <div className="offer-item" key={edge.node.frontmatter.name}>
             <h4>{edge.node.frontmatter.name}</h4>
