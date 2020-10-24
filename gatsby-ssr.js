@@ -66,7 +66,7 @@ const GlobalStyles = css`
     background: transparent;
     color: inherit;
     font: inherit;
-    line-height: 0;
+    line-height: 100%;
     cursor: pointer;
     -webkit-font-smoothing: inherit;
     -moz-osx-font-smoothing: inherit;
