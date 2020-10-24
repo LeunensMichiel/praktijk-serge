@@ -10,10 +10,21 @@ export const NavWrapper = styled.header`
     );
   align-content: center;
   position: fixed;
-  top: 100px;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 100;
+  padding: ${p => p.theme.space[4]} 0;
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: ${p =>
+    p.isDarkBackground ? "transparent" : p.theme.colors.white};
+  transform: ${props =>
+    props.isStatic ? "translateY(72px)" : "translateY(0)"};
+  @media ${p => p.theme.mq.tablet} {
+    padding: ${p => p.theme.space[2]} 0;
+    grid-gap: 12px 0;
+  }
 
   @media ${p => p.theme.mq.mobileM} {
     background-color: ${p => p.theme.colors.white};
@@ -22,6 +33,7 @@ export const NavWrapper = styled.header`
     top: 72px;
     width: 100%;
     min-height: 200px;
+    padding: 0;
     transform: ${props => (props.show ? "translateY(0)" : "translateY(-100%)")};
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
@@ -34,7 +46,10 @@ export const LogoWrapper = styled.div`
   h2 {
     text-transform: uppercase;
     font-size: ${p => p.theme.fontSizes[4]};
-    color: ${p => p.theme.colors.accentLighter};
+    color: ${p =>
+      p.isDarkBackground
+        ? p.theme.colors.accentLighter
+        : p.theme.colors.grayDark};
     cursor: pointer;
     transition: color 0.3s ease-out;
     &:hover {
@@ -44,13 +59,16 @@ export const LogoWrapper = styled.div`
   }
   @media ${p => p.theme.mq.tablet} {
     margin-top: ${p => p.theme.space[0]};
-    grid-column: 2 / span 12;
+    grid-column: 2 / span 6;
     justify-content: center;
     h2 {
       font-size: ${p => p.theme.fontSizes[2]};
     }
   }
   @media ${p => p.theme.mq.mobileM} {
+    h2 {
+      color: ${p => p.theme.colors.accentLighter};
+    }
     margin-top: 0;
     display: ${p => (p.mobile ? "flex" : "none")};
     padding-left: 16px;
@@ -68,7 +86,8 @@ export const LinkWrapper = styled.nav`
     font-size: ${p => p.theme.fontSizes[3]};
     font-weight: 700;
     text-transform: uppercase;
-    color: ${p => p.theme.colors.white};
+    color: ${p =>
+      p.isDarkBackground ? p.theme.colors.white : p.theme.colors.grayDark};
     transition: color 0.3s ease-out, background-color 0.3s ease-out;
     cursor: pointer;
     &:hover {
@@ -76,11 +95,12 @@ export const LinkWrapper = styled.nav`
       transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     }
     &.active {
+      color: ${p => p.theme.colors.white};
       background-color: ${p => p.theme.colors.grayDarker};
     }
   }
   @media ${p => p.theme.mq.tablet} {
-    grid-column: 2 / span 12;
+    grid-column: 8 / span 6;
     justify-self: center;
     a {
       font-size: ${p => p.theme.fontSizes[2]};
@@ -97,21 +117,9 @@ export const LinkWrapper = styled.nav`
       justify-content: center;
       margin: 0;
       padding: 32px 0;
+      color: ${p => p.theme.colors.white};
       font-size: ${p => p.theme.fontSizes[3]};
       background-color: ${p => p.theme.colors.grayDark};
-      &:nth-of-type(2n) {
-        background-color: ${p => p.theme.colors.grayDarker};
-      }
-      &:hover,
-      &:focus {
-        background-color: ${p => p.theme.colors.accentDark};
-      }
-      &.link-cta {
-        &:hover,
-        &:focus {
-          background-color: ${p => p.theme.colors.accentDark};
-        }
-      }
     }
   }
 `

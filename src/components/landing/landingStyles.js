@@ -52,6 +52,7 @@ export const InnerLanding = styled.div`
     text-transform: uppercase;
     color: ${p => p.theme.colors.grayDark};
     transition: background-color 0.3s ease-out, padding 0.3s ease;
+    cursor: pointer;
     &:hover {
       padding: ${p => p.theme.space[3]} ${p => p.theme.space[4]};
       background-color: ${p => p.theme.colors.accentLight};

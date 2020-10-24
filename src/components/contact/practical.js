@@ -33,8 +33,8 @@ const Practical = () => {
         <div className="contact__info--section">
           <h5>Afspraak</h5>
           <p>
-            U kan enkel telefonisch een afspraak maken op het nummer 09 224 63
-            33.
+            U kan enkel telefonisch een afspraak maken op het nummer{" "}
+            <b>09 224 63 33.</b>
           </p>
           <p>
             <b>Met vermelding:</b> privéraadpleging Deinze.

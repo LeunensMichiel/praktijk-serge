@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "react-scroll"
+import { throttle } from "lodash"
 
 import {
   NavWrapper,
@@ -9,6 +10,24 @@ import {
 } from "./navbarStyles"
 
 const Navbar = ({ show = false, hamburgerClickHandler }) => {
+  const [isDarkBackground, setIsDarkBackground] = useState(true)
+  const [prevScrollPos, setPrevScrollPos] = useState(0)
+  const [isStatic, setIsStatic] = useState(true)
+
+  const handleScroll = throttle(() => {
+    const currentScrollPos = window.pageYOffset
+
+    setIsStatic(currentScrollPos < 100)
+
+    setPrevScrollPos(currentScrollPos)
+  }, 100)
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll)
+
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [prevScrollPos, isStatic, handleScroll])
+
   return (
     <>
       <NavbarWrapper>
@@ -37,24 +56,30 @@ const Navbar = ({ show = false, hamburgerClickHandler }) => {
           </span>
         </button>
       </NavbarWrapper>
-      <NavWrapper show={show}>
-        <LogoWrapper>
+      <NavWrapper
+        show={show}
+        isStatic={isStatic}
+        isDarkBackground={isDarkBackground}
+      >
+        <LogoWrapper isDarkBackground={isDarkBackground}>
           <Link
             to="home"
             activeClass="active"
             spy={true}
             smooth="easeInOutQuint"
+            onSetActive={() => setIsDarkBackground(true)}
           >
             <h2>Dr. Serge Van de Voorde</h2>
           </Link>
         </LogoWrapper>
-        <LinkWrapper>
+        <LinkWrapper isDarkBackground={isDarkBackground}>
           <Link
             to="arts"
             activeClass="active"
             spy={true}
             hashSpy={true}
             smooth="easeInOutQuint"
+            onSetActive={() => setIsDarkBackground(false)}
           >
             Arts
           </Link>
@@ -64,6 +89,7 @@ const Navbar = ({ show = false, hamburgerClickHandler }) => {
             activeClass="active"
             spy={true}
             smooth="easeInOutQuint"
+            onSetActive={() => setIsDarkBackground(false)}
           >
             Aanbod
           </Link>
@@ -74,6 +100,7 @@ const Navbar = ({ show = false, hamburgerClickHandler }) => {
             spy={true}
             hashSpy={true}
             smooth="easeInOutQuint"
+            onSetActive={() => setIsDarkBackground(false)}
           >
             Praktisch
           </Link>
