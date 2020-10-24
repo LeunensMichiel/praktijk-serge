@@ -42,7 +42,7 @@ const Navbar = ({ show = false, hamburgerClickHandler }) => {
           </Link>
         </LogoWrapper>
         <button
-          className="hamburger hamburger--elastic"
+          className="hamburger hamburger--minus"
           type="button"
           onClick={hamburgerClickHandler}
           onKeyDown={hamburgerClickHandler}

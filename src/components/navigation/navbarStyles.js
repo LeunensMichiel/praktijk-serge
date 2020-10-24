@@ -135,9 +135,11 @@ export const NavbarWrapper = styled.nav`
   z-index: 10000;
   background: ${p => p.theme.colors.grayDarker};
   box-shadow: ${p => p.theme.shadows.container};
+
   .hamburger {
-    padding: 16px;
-    height: 56px;
+    padding: 8px;
+    height: 48px;
+    margin-right: 16px;
     display: inline-block;
     cursor: pointer;
     transition-property: opacity, filter;
@@ -196,68 +198,29 @@ export const NavbarWrapper = styled.nav`
       bottom: -10px;
     }
   }
-  .hamburger--elastic {
+  .hamburger--minus {
     .hamburger-inner {
-      top: 2px;
-      transition-duration: 0.275s;
-      transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-      &::before {
-        top: 10px;
-        transition: opacity 0.125s 0.275s ease;
-      }
-
+      &::before,
       &::after {
-        top: 20px;
-        transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: bottom 0.08s 0s ease-out, top 0.08s 0s ease-out,
+          opacity 0s linear;
       }
     }
+
     &.is-active {
       .hamburger-inner {
-        transform: translate3d(0, 10px, 0) rotate(135deg);
-        transition-delay: 0.075s;
-
-        &::before {
-          transition-delay: 0s;
+        &::before,
+        &::after {
           opacity: 0;
+          transition: bottom 0.08s ease-out, top 0.08s ease-out,
+            opacity 0s 0.08s linear;
         }
-
-        &::after {
-          transform: translate3d(0, -20px, 0) rotate(-270deg);
-          transition-delay: 0.075s;
-        }
-      }
-    }
-    .hamburger--elastic-r {
-      .hamburger-inner {
-        top: 2px;
-        transition-duration: 0.275s;
-        transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
         &::before {
-          top: 10px;
-          transition: opacity 0.125s 0.275s ease;
+          top: 0;
         }
 
         &::after {
-          top: 20px;
-          transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-      }
-      &.is-active {
-        .hamburger-inner {
-          transform: translate3d(0, 10px, 0) rotate(-135deg);
-          transition-delay: 0.075s;
-
-          &::before {
-            transition-delay: 0s;
-            opacity: 0;
-          }
-
-          &::after {
-            transform: translate3d(0, -20px, 0) rotate(270deg);
-            transition-delay: 0.075s;
-          }
+          bottom: 0;
         }
       }
     }
