@@ -12,7 +12,7 @@ export const OfferWrapper = styled.section`
   background-size: cover;
   background-position: center;
   display: grid;
-  grid-template-columns: minmax(16px, 1fr) repeat(2, minmax(24px, 190px)) minmax(
+  grid-template-columns: minmax(16px, 1fr) repeat(12, minmax(24px, 95px)) minmax(
       16px,
       1fr
     );
@@ -22,7 +22,7 @@ export const OfferWrapper = styled.section`
   position: relative;
 
   .offer-item {
-    grid-column: 2;
+    grid-column: 4 / span 4;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,7 +30,7 @@ export const OfferWrapper = styled.section`
     padding: ${p => p.theme.space[2]} ${p => p.theme.space[3]};
     background: ${p => p.theme.colors.accentLighter};
     &:nth-of-type(even) {
-      grid-column: 3;
+      grid-column: 8 / span 4;
     }
 
     h4 {
@@ -64,15 +64,22 @@ export const OfferWrapper = styled.section`
     background: ${p => p.theme.colors.whiteNeutral};
   }
 
+  @media ${p => p.theme.mq.tablet} {
+    .offer-item {
+      grid-column: 2 / span 6;
+      &:nth-of-type(even) {
+        grid-column: 8 / span 6;
+      }
+    }
+  }
   @media ${p => p.theme.mq.mobileM} {
     grid-gap: 48px 0;
     .offer-item {
-      grid-column: 2 / span 2;
       width: 100%;
+      grid-column: 2 / span 12;
       &:nth-of-type(even) {
-        grid-column: 2 / span 2;
+        grid-column: 2 / span 12;
       }
-
       h4 {
         font-size: ${p => p.theme.fontSizes[2]};
       }

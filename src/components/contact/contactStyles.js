@@ -66,15 +66,17 @@ export const InfoWrapper = styled.section`
     }
   }
 
+  @media ${p => p.theme.mq.tablet} {
+    p {
+      font-size: ${p => p.theme.fontSizes[1]};
+    }
+  }
   @media ${p => p.theme.mq.mobileM} {
     grid-column: 2 / span 12;
     flex-direction: column;
     padding: ${p => p.theme.space[5]} 0;
     .contact__info {
       padding: ${p => p.theme.space[3]};
-    }
-    p {
-      font-size: ${p => p.theme.fontSizes[1]};
     }
     .contact__aside {
       height: 0;

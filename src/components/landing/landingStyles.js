@@ -11,6 +11,10 @@ export const LandingWrapper = styled.section`
       16px,
       1fr
     );
+  @media ${p => p.theme.mq.tablet} {
+    height: 550px;
+    padding-top: ${p => p.theme.space[5]};
+  }
   @media ${p => p.theme.mq.mobileM} {
     height: auto;
     padding-top: ${p => p.theme.space[5]};
@@ -58,6 +62,9 @@ export const InnerLanding = styled.div`
       background-color: ${p => p.theme.colors.accentLight};
       transition: background-color 0.3s ease-out, padding 0.1s 0.3s ease-out;
     }
+  }
+  @media ${p => p.theme.mq.tablet} {
+    margin-bottom: ${p => p.theme.space[5]};
   }
   @media ${p => p.theme.mq.mobileM} {
     grid-column: 2 / span 12;
@@ -140,7 +147,9 @@ export const LandingImage = styled.figure`
       color: ${p => p.theme.colors.white};
     }
   }
-
+  @media ${p => p.theme.mq.tablet} {
+    height: 240px;
+  }
   @media ${p => p.theme.mq.mobileM} {
     height: 220px;
     blockquote {

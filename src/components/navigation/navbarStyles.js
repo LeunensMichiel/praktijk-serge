@@ -32,7 +32,7 @@ export const NavWrapper = styled.header`
     flex-direction: column;
     top: 72px;
     width: 100%;
-    min-height: 200px;
+    min-height: 180px;
     padding: 0;
     transform: ${props => (props.show ? "translateY(0)" : "translateY(-100%)")};
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);

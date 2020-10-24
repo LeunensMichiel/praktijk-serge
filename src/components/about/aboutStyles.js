@@ -73,15 +73,23 @@ export const AboutWrapper = styled.section`
       }
     }
   }
-
-  @media ${p => p.theme.mq.mobileM} {
+  @media ${p => p.theme.mq.tablet} {
+    grid-column: 3 / span 10;
     flex-wrap: wrap;
+    justify-content: center;
+    padding: ${p => p.theme.space[7]} 0;
+    .img-wrapper {
+      width: 50%;
+      padding-bottom: 50%;
+      margin-right: 0;
+      margin-bottom: ${p => p.theme.space[5]};
+    }
+  }
+  @media ${p => p.theme.mq.mobileM} {
+    grid-column: 2 / span 12;
     padding: ${p => p.theme.space[5]} 0;
     .img-wrapper {
       width: 100%;
-      padding-bottom: 100%;
-      margin-right: 0;
-      margin-bottom: ${p => p.theme.space[5]};
     }
     .flex {
       flex-wrap: wrap;
