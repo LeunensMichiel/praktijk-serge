@@ -50,11 +50,9 @@ const About = () => {
             </a>
           </div>
           <div className="about__card">
-            <h3>Privéconsultatie</h3>
+            <h3>Privéconsultatie Deinze</h3>
             <span>Dinsdagnamiddag</span>
-            <span className="about__card-footer">
-              1x/maand woensdagvoormiddag
-            </span>
+            <span>Woensdagvoormiddag, 1x/maand</span>
           </div>
         </div>
       </div>
